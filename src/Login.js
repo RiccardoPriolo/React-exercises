@@ -1,18 +1,18 @@
 import React from "react";
 
 class Login extends React.Component {
-  state = { username: " ", password: " ", remember: " " };
+  state = { username: "", password: "", chechbox: "" };
 
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    const type = event.target.type;
     const checked = event.target.checked;
+    const type = event.target.type;
 
-    this.setState({
-      [name]: type === "checkbox" ? checked : value,
-    });
+    this.setState({ [name]: type === "checkbox" ? checked : value });
   };
+
+ 
 
   render() {
     return (
@@ -31,13 +31,22 @@ class Login extends React.Component {
         />
         <input
           type="checkbox"
-          name="remember"
-          checked={this.state.remember}
+          name="checkbox"
+          value={this.state.checked}
           onChange={this.handleInputChange}
         />
+        <button
+          type="button"
+          name="login"
+          onClick={() => {
+            this.props.onLogin(this.state);
+          }}
+          disabled={!this.state.username || this.state.password === ""}
+        >
+          login
+        </button>
       </>
     );
   }
 }
-
 export default Login;
