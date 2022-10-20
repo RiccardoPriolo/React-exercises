@@ -12,7 +12,7 @@ class Welcome extends React.Component {
 }
 
 Welcome.defaultProps = {
-  name: "Alfio",
+  name: <strong>Alfio</strong>,
 };
 
 export default Welcome;
