@@ -1,8 +1,8 @@
 import React from "react";
+import ClickCounter from "./ClickCounter";
 import CounterDisplay from "./CounterDisplay";
 
 class Counter extends React.Component {
-  
   state = { count: this.props.value };
 
   componentDidMount() {
