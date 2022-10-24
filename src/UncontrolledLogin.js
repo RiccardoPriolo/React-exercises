@@ -21,7 +21,7 @@ class MyUncontrolledForm extends React.Component {
         <h3>Uncontrolled form</h3>
 
         <form onSubmit={this.handleFormSubmit}>
-          <input name="username" />
+          <input name="username" autoFocus/>
           <input name="password" type="password" />
           <input name="remember" type="checkbox" />
           <button type="submit">Submit</button>
