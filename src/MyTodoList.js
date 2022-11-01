@@ -20,6 +20,12 @@ class TodoList extends React.Component {
     });
   };
 
+  handleReset = () => {
+    this.setState({
+      items: [],
+    });
+  };
+
   render() {
     return (
       <>
@@ -40,6 +46,9 @@ class TodoList extends React.Component {
           disabled={this.state.addBtn}
         >
           Add{" "}
+        </button>
+        <button type="button" onClick={this.handleReset}>
+          Reset List
         </button>
       </>
     );
