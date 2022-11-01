@@ -21,6 +21,9 @@ class Login extends React.Component {
   };
 
   render() {
+    const btnColor = {
+      backgroundColor: this.state.password.length >= 8 ? "green" : "red",
+    };
     return (
       <>
         <input
@@ -48,6 +51,7 @@ class Login extends React.Component {
             this.props.onLogin(this.state);
           }}
           disabled={!this.state.username || this.state.password === ""}
+          style={btnColor}
         >
           login
         </button>
