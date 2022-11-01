@@ -26,12 +26,23 @@ class TodoList extends React.Component {
     });
   };
 
+  handleDeleteItem = (index) => {
+    let newArray = [...this.state.items];
+    newArray.splice(index, 1);
+    this.setState({
+      items: newArray,
+    });
+  };
+
   render() {
     return (
       <>
         <ul>
           {this.state.items.map((items, index) => (
-            <li key={index}>{items}</li>
+            <li key={index}>
+              {items}
+              <button onClick={this.handleDeleteItem}>Remove Item</button>
+            </li>
           ))}
         </ul>
         <input
