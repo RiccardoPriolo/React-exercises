@@ -17,7 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container title="Learning React!">
         <Hello />
 
         <Counter value={0} increment={1} interval={1000} />
