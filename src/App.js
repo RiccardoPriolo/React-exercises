@@ -8,6 +8,7 @@ import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
 import MyUncontrolledForm from "./UncontrolledLogin";
 import MyToDoList from "./MyTodoList";
+import { Container } from "./Container";
 
 class App extends React.Component {
   onLogin = (state) => {
@@ -16,7 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Hello />
 
         <Counter value={0} increment={1} interval={1000} />
@@ -26,7 +27,7 @@ class App extends React.Component {
         <Login onLogin={this.onLogin} />
         <MyUncontrolledForm />
         <MyToDoList />
-      </div>
+      </Container>
     );
   }
 }

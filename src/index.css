@@ -3,3 +3,10 @@
   border: 1.5px solid black;
   border-radius: 3px;
 }
+
+.container {
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 10px;
+}
