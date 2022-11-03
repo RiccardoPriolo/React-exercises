@@ -37,14 +37,6 @@ class TodoList extends React.Component {
   render() {
     return (
       <>
-        <ul>
-          {this.state.items.map((items, index) => (
-            <li key={index}>
-              {items}
-              <button onClick={this.handleDeleteItem}>Remove Item</button>
-            </li>
-          ))}
-        </ul>
         <input
           name="todo"
           type="text"
@@ -61,6 +53,7 @@ class TodoList extends React.Component {
         <button type="button" onClick={this.handleReset}>
           Reset List
         </button>
+        <div>{this.props.render(this.state.items, this.handleDeleteItem)}</div>
       </>
     );
   }

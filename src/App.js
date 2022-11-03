@@ -19,14 +19,22 @@ class App extends React.Component {
     return (
       <Container title="Learning React!">
         <Hello />
-
         <Counter value={0} increment={1} interval={1000} />
         <ClickCounter />
         <ClickTracker />
         <InteractiveWelcome />
         <Login onLogin={this.onLogin} />
         <MyUncontrolledForm />
-        <MyToDoList />
+        <MyToDoList
+          render={(items, handleDeleteItem) => {
+            return items.map((items, index) => (
+              <li key={index}>
+                {items}
+                <button onClick={handleDeleteItem}>Remove Item</button>
+              </li>
+            ));
+          }}
+        />
       </Container>
     );
   }
