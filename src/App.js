@@ -9,6 +9,9 @@ import Login from "./Login";
 import MyUncontrolledForm from "./UncontrolledLogin";
 import MyToDoList from "./MyTodoList";
 import { Container } from "./Container";
+import { LanguageComponent } from "./LanguageContext";
+
+import { isCompositeComponent } from "react-dom/test-utils";
 
 class App extends React.Component {
   onLogin = (state) => {
@@ -18,6 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <Container title="Learning React!">
+        <LanguageComponent />
         <Hello />
         <Counter value={0} increment={1} interval={1000} />
         <ClickCounter />
