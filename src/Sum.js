@@ -1,9 +1,10 @@
 import React from "react";
 
 export const Sum = (props) => {
-  const numbers = props.numbers;
+  
+    const { numbers = [ 1, 2, 3, 4] } = props;
 
-  const sum = numbers.reduce(
+  let sum = numbers.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
   );
@@ -16,3 +17,5 @@ export const Sum = (props) => {
     </div>
   );
 };
+
+/* ho renderizzato in App oltre ad aver fatto un clg di sum  */

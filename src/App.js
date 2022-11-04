@@ -8,6 +8,7 @@ import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
 import MyUncontrolledForm from "./UncontrolledLogin";
 import MyToDoList from "./MyTodoList";
+import { Sum } from "./Sum";
 
 class App extends React.Component {
   onLogin = (state) => {
@@ -26,6 +27,7 @@ class App extends React.Component {
         <Login onLogin={this.onLogin} />
         <MyUncontrolledForm />
         <MyToDoList />
+        <Sum />
       </div>
     );
   }
