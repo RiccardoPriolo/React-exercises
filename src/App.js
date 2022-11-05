@@ -11,10 +11,6 @@ import MyToDoList from "./MyTodoList";
 import { Sum } from "./Sum";
 
 class App extends React.Component {
-  onLogin = (state) => {
-    console.log(state);
-  };
-
   render() {
     return (
       <div>

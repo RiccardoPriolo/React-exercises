@@ -1,64 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Login extends React.Component {
-  state = { username: "", password: "", remember: "false" };
+function Login() {
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+    remember: false,
+    disabled: true,
+  });
 
-  handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    const checked = event.target.remember;
-    const type = event.target.type;
+  const handleInputChange = (event) => {
+    const { name, type, value, checked } = event.target;
 
-    this.setState({ [name]: type === "checkbox" ? checked : value });
-  };
-
-  handleResetState = () => {
-    this.setState({
-      username: "",
-      password: "",
-      remember: false,
+    setData((data) => {
+      return {
+        ...data,
+        [name]: type === "checkbox" ? checked : value,
+      };
     });
   };
 
-  render() {
-    const btnColor = {
-      backgroundColor: this.state.password.length >= 8 ? "green" : "red",
-    };
-    return (
-      <>
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.handleInputChange}
-        />
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleInputChange}
-        />
-        <input
-          type="checkbox"
-          name="remember"
-          checked={this.state.remember}
-          onChange={this.handleInputChange}
-        />
-        <button
-          type="button"
-          name="login"
-          onClick={() => {
-            this.props.onLogin(this.state);
-          }}
-          disabled={!this.state.username || this.state.password === ""}
-          style={btnColor}
-        >
-          login
-        </button>
+  const onLogin = () => {
+    console.log(data.username, data.password, data.remember);
+    setData((data) => {
+      return {
+        ...data,
+        username: "",
+        password: "",
+        remember: false,
+      };
+    });
+  };
 
-        <button onClick={this.handleResetState}>Reset</button>
-      </>
-    );
-  }
+  const onReset = () => {
+    setData((data) => {
+      return {
+        ...data,
+        username: "",
+        password: "",
+        remember: false,
+      };
+    });
+  };
+
+  const MyStyle = {
+    color: "black",
+    backgroundColor: data.password.length >= 8 ? "green" : "red",
+  };
+  return (
+    <div>
+      <input
+        name="username"
+        value={data.username}
+        onChange={handleInputChange}
+      />
+      <input
+        name="password"
+        type="password"
+        value={data.password}
+        onChange={handleInputChange}
+      />
+      <input
+        name="remember"
+        type="checkbox"
+        checked={data.remember}
+        onChange={handleInputChange}
+      />
+      <button
+        style={MyStyle}
+        disabled={!data.username || !data.password}
+        onClick={onLogin}
+      >
+        Login
+      </button>
+      <button onClick={onReset}>Reset</button>
+    </div>
+  );
 }
+
 export default Login;
