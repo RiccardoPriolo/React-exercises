@@ -17,7 +17,11 @@ class App extends React.Component {
         <Hello />
 
         <Counter value={0} increment={1} interval={1000} />
-        <ClickCounter />
+        <ClickCounter
+          onCounterChange={(count) => {
+            return console.log("The count is " + count);
+          }}
+        />
         <ClickTracker />
         <InteractiveWelcome />
         <Login onLogin={this.onLogin} />
