@@ -9,7 +9,8 @@ import Login from "./Login";
 import MyUncontrolledForm from "./UncontrolledLogin";
 import MyToDoList from "./MyTodoList";
 import { Sum } from "./Sum";
-import { GitHubUser } from "./GitHubUser";
+
+import  GitHubUserList from "./GitHubUserList";
 
 class App extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class App extends React.Component {
         <MyUncontrolledForm />
         <MyToDoList />
         <Sum />
-        <GitHubUser />
+        <GitHubUserList />
       </div>
     );
   }
