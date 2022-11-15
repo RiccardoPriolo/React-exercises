@@ -11,6 +11,7 @@ import MyToDoList from "./MyTodoList";
 import { Sum } from "./Sum";
 
 import  GitHubUserList from "./GitHubUserList";
+import CustomCounter from "./useCounter";
 
 class App extends React.Component {
   render() {
@@ -31,6 +32,7 @@ class App extends React.Component {
         <MyToDoList />
         <Sum />
         <GitHubUserList />
+        <CustomCounter />
       </div>
     );
   }
