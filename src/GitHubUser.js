@@ -17,6 +17,7 @@ function useGitHubUser(username) {
 
   return {
     data: data,
+    getUser: getData, 
   };
 }
 
