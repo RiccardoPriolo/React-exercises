@@ -13,14 +13,16 @@ import { Sum } from "./Sum";
 import GitHubUserList from "./GitHubUserList";
 import CustomCounter from "./useCounter";
 import { CustomLogin } from "./useForm";
-import  CarDetails from "./CarDetails";
+import CarDetails from "./CarDetails";
+
+import { LanguageComponent } from "./LanguageContext";
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Hello />
-
+        <LanguageComponent />
         <Counter value={0} increment={1} interval={1000} />
         <ClickCounter
           onCounterChange={(count) => {
@@ -36,7 +38,9 @@ class App extends React.Component {
         <GitHubUserList />
         <CustomCounter />
         <CustomLogin />
-        <CarDetails initialData={{ model: "BMW 120D", year: "2022", color: "Grey" }}/>
+        <CarDetails
+          initialData={{ model: "BMW 120D", year: "2022", color: "Grey" }}
+        />
       </div>
     );
   }
