@@ -19,6 +19,9 @@ import CarDetails from "./CarDetails";
 import { LanguageComponent } from "./LanguageContext";
 import { FilteredList } from "./FilteredList";
 import Welcome from "./Welcome";
+import { ShowGithubUser } from "./ShowGitHubUser";
+
+
 
 class App extends React.Component {
   render() {
@@ -30,6 +33,7 @@ class App extends React.Component {
             path="/Counter"
             element={<Counter value={0} increment={1} interval={1000} />}
           />
+          <Route path="/users/:username" element={<ShowGithubUser />} />
         </Routes>
 
         <Hello />

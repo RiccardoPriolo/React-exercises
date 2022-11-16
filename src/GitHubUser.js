@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 
 function useGitHubUser(username) {
   const url = `https://api.github.com/users/${username}`;
   const [data, setData] = useState([]);
+
+  
 
   const getData = async () => {
     const response = await axios.get(url);
@@ -17,7 +20,7 @@ function useGitHubUser(username) {
 
   return {
     data: data,
-    getUser: getData, 
+    getUser: getData,
   };
 }
 
