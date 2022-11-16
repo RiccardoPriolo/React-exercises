@@ -13,6 +13,7 @@ import { Sum } from "./Sum";
 import GitHubUserList from "./GitHubUserList";
 import CustomCounter from "./useCounter";
 import { CustomLogin } from "./useForm";
+import  CarDetails from "./CarDetails";
 
 class App extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class App extends React.Component {
         <GitHubUserList />
         <CustomCounter />
         <CustomLogin />
+        <CarDetails initialData={{ model: "BMW 120D", year: "2022", color: "Grey" }}/>
       </div>
     );
   }
