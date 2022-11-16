@@ -16,6 +16,7 @@ import { CustomLogin } from "./useForm";
 import CarDetails from "./CarDetails";
 
 import { LanguageComponent } from "./LanguageContext";
+import { FilteredList } from "./FilteredList";
 
 class App extends React.Component {
   render() {
@@ -41,6 +42,7 @@ class App extends React.Component {
         <CarDetails
           initialData={{ model: "BMW 120D", year: "2022", color: "Grey" }}
         />
+        <FilteredList />
       </div>
     );
   }
