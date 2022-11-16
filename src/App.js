@@ -20,8 +20,7 @@ import { LanguageComponent } from "./LanguageContext";
 import { FilteredList } from "./FilteredList";
 import Welcome from "./Welcome";
 import { ShowGithubUser } from "./ShowGitHubUser";
-
-
+import { Link } from "react-router-dom";
 
 class App extends React.Component {
   render() {
@@ -35,6 +34,14 @@ class App extends React.Component {
           />
           <Route path="/users/:username" element={<ShowGithubUser />} />
         </Routes>
+
+        <div>
+          <Link to="/">Welcome</Link>
+          <hr />
+          <Link to="/counter">Count</Link>
+          <hr />
+          <Link to="/users/RiccardoPriolo">User</Link>
+        </div>
 
         <Hello />
         <LanguageComponent />
