@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Counter from "./Counter";
 import Hello from "./Hello";
 
@@ -17,11 +18,16 @@ import CarDetails from "./CarDetails";
 
 import { LanguageComponent } from "./LanguageContext";
 import { FilteredList } from "./FilteredList";
+import Welcome from "./Welcome";
 
 class App extends React.Component {
   render() {
     return (
       <div>
+        <Routes>
+          <Route path="/" element={<Welcome name="Riccardo" />} />
+        </Routes>
+
         <Hello />
         <LanguageComponent />
         <Counter value={0} increment={1} interval={1000} />
