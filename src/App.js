@@ -32,7 +32,9 @@ class App extends React.Component {
             path="/Counter"
             element={<Counter value={0} increment={1} interval={1000} />}
           />
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="/users" element={<GitHubUserList />}>
+            <Route path=":username" element={<ShowGithubUser />} />
+          </Route>
 
           <Route
             path="*"
