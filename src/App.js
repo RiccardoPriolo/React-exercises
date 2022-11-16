@@ -33,6 +33,16 @@ class App extends React.Component {
             element={<Counter value={0} increment={1} interval={1000} />}
           />
           <Route path="/users/:username" element={<ShowGithubUser />} />
+
+          <Route
+            path="*"
+            element={
+              <div>
+                <p>Not Found</p>
+                <Link to="/" element={<p>Go Home</p>} />
+              </div>
+            }
+          />
         </Routes>
 
         <div>
