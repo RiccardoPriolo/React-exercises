@@ -26,11 +26,15 @@ class App extends React.Component {
       <div>
         <Routes>
           <Route path="/" element={<Welcome name="Riccardo" />} />
+          <Route
+            path="/Counter"
+            element={<Counter value={0} increment={1} interval={1000} />}
+          />
         </Routes>
 
         <Hello />
         <LanguageComponent />
-        <Counter value={0} increment={1} interval={1000} />
+
         <ClickCounter
           onCounterChange={(count) => {
             return console.log("The count is " + count);
