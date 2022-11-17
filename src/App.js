@@ -34,6 +34,7 @@ class App extends React.Component {
           />
           <Route path="/users" element={<GitHubUserList />}>
             <Route path=":username" element={<ShowGithubUser />} />
+            <Route index element={<h2>Add a user and select it</h2>} />
           </Route>
 
           <Route
