@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 
-import axios from "axios";
+const fetcher = (url) => fetch(url).then((response) => response.json());
 
 function useGitHubUser(username) {
-  const url = `https://api.github.com/users/${username}`;
-  const [data, setData] = useState([]);
-
-  
-
-  const getData = async () => {
-    const response = await axios.get(url);
-    console.log(response);
-    setData(response.data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, [username]);
+  const { data } = useSWR(`https://api.github.com/users/${username}`, fetcher);
 
   return {
-    data: data,
-    getUser: getData,
+    data,
   };
 }
 
@@ -29,9 +15,12 @@ export function GitHubUser({ username }) {
 
   return (
     <div>
-      <img src={data.avatar_url} alt="user" className="avatar" />
-      <h2>{data.name}</h2>
-      <p>{data.html_url}</p>
+      {data && (
+        <div>
+          <h1>{data.name}</h1>
+          <img src={data.avatar_url} alt="user" className="avatar" />
+        </div>
+      )}
     </div>
   );
 }
